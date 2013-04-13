@@ -9,7 +9,6 @@ from flask import (
 import urllib
 import json
 import requests
-import mongokit
 
 hackathon = Flask(__name__)
 
