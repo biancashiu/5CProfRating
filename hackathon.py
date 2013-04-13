@@ -36,7 +36,6 @@ def results():
 	json_response = json.loads(response.text)
 
 	return render_template('results.html',
-							search_term=search_term,
 							location=department,
 							courses=json_response)
 
