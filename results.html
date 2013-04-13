@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ location }}</h2>
+<ul class='entries'>
+    {% for course in courses %}
+        <li>
+            <div>
+                <h4>{{course['title']}}</a></h4>
+                {{'Campus: '+course['campus']}}
+                <br/>
+                {{'Professor: '+course['instructor'] }}
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('index') }}">back</a>
+{% endblock %}
