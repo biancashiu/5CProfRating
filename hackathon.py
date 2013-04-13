@@ -9,7 +9,6 @@ from flask import (
 import urllib
 import json
 import requests
-from oauth import sign_url
 import mongokit
 
 hackathon = Flask(__name__)
@@ -20,9 +19,16 @@ COURSE_SEARCH_URL = 'http://course-api.herokuapp.com/'
 def index():
 	return render_template('index.html')
 
+@hackathon.route('/browse')
+def browse():
+	return render_template('browse.html')
+
+@hackathon.route('/write')
+def write():
+	return render_template('enterReviews.html')
+
 @hackathon.route('/results', methods=['POST'])
 def results():
-	search_term = request.form['term']
 	department = request.form['department']
 
 	api_url =  "%s/%s" % (COURSE_SEARCH_URL, department)
